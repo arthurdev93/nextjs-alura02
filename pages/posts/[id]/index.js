@@ -8,15 +8,14 @@ export default function Post() {
 
   return (
     <div>
-      Página de post!
-
+      Id do post atual: {router.query.id}
       <ul>
         <li>
-          <Link href="/">
-            <a>Ir para a home</a>
+          <Link href={`${router.query.id}/comentarios`}>
+            <a>Ir para comentarios</a>
           </Link>
         </li>
       </ul>
     </div>
-  )
+  );
 }
