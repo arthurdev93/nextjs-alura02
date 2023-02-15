@@ -1,12 +1,14 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 
+//o nome [id] do arquivo permite a geração de novas paginas de posts 
+
 export default function Post() {
   const router = useRouter();
 
   return (
     <div>
-      Id do post atual: {router.query.id}
+      Página de post!
 
       <ul>
         <li>

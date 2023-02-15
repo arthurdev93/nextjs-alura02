@@ -17,5 +17,5 @@ function HomePage() {
     </div>
   )
 }
-
+//tag Link permite o comportamento de SPA, só muda o trecho que precisa mudar
 export default HomePage
