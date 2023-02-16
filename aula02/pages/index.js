@@ -1,6 +1,7 @@
 import NextLink from 'next/link';
 import { Box, Text, Image } from '@skynexui/components';
 import dados from '../dados.json';
+import { useEffect, useState } from 'react';
 
 export default function HomeScreen() {
   const infos = {
@@ -8,6 +9,15 @@ export default function HomeScreen() {
     githubUser: 'omariosouto',
   }
   const posts = dados.posts;
+  const [data, setData] = useState('');
+  const [dataParsed, setDataParsed] = useState('');
+  useEffect(() => {
+    console.log('comomente montado')
+  }, []);
+
+  useEffect(() => {
+    setDataParsed(data.toUpperCase())
+  }, [data]);
 
   return (
     <Box
@@ -18,6 +28,16 @@ export default function HomeScreen() {
         paddingHorizontal: '16px',
       }}
     >
+      <input
+        type={"text"}
+        style={{
+          border: 'solid 1px black'
+        }}
+        onChange={
+          (e) => setData(e.target.value)
+        }
+      />
+      <p>{dataParsed}</p>
       <Image
         src={`https://github.com/${infos.githubUser}.png`}
         styleSheet={{
